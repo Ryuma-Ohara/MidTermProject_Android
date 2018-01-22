@@ -15,7 +15,6 @@ import java.util.List;
 
 public class CardListActivity extends AppCompatActivity {
 
-    private ArrayAdapter<String> adapter;
     private List<String> folderList;
     private ArrayAdapter<String> arrayAdapter;
     private ListView lv;

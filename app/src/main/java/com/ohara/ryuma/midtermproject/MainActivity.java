@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean mIsBackVisible = false;
     private View mCardFrontLayout;
     private View mCardBackLayout;
+    private ArrayList<FlashCard> card = new FlashCardFactory().getFlashCardSet();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +31,12 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Flash Cards");
 
+        setFlashCard();
+
         findViews();
         loadAnimations();
         changeCameraDistance();
+
     }
 
     //========== Animation ==========
@@ -64,5 +71,13 @@ public class MainActivity extends AppCompatActivity {
             mSetLeftIn.start();
             mIsBackVisible = false;
         }
+    }
+
+    public void setFlashCard() {
+        TextView flashCardFrontView = (TextView) findViewById(R.id.card_word);
+        flashCardFrontView.setText(card.get(0).getFront());
+
+        TextView flashCardBackView = (TextView) findViewById(R.id.card_meaning);
+        flashCardBackView.setText(card.get(0).getBack());
     }
 }
