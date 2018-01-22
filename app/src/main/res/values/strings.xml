@@ -2,7 +2,7 @@
     <string name="app_name">Flash cards</string>
     <string name="front">front</string>
     <string name="back">back</string>
-    <string-array name="array_country">
+    <string-array name="array_folder">
         <item>Afghanistan</item>
         <item>Albania</item>
         <item>Algeria</item>
@@ -48,5 +48,6 @@
         <item>Zambia</item>
         <item>Zimbabwe</item>
     </string-array>
+
 
 </resources>

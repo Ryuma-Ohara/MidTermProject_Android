@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ohara.ryuma.midtermproject.FoldersActivity">
+    tools:context="com.ohara.ryuma.midtermproject.CardListActivity">
+
 
     <ListView
-        android:id="@+id/listViewFolder"
+        android:id="@+id/listViewCard"
         android:layout_width="match_parent"
         android:layout_height="460dp" />
 
@@ -20,7 +22,7 @@
         android:background="@color/bottom_menu_bg">
 
         <ImageButton
-            android:id="@+id/edit_folder"
+            android:id="@+id/edit_card"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -28,13 +30,13 @@
             android:src="@drawable/ic_edit_black_24dp"/>
 
         <Button
-            android:id="@+id/add_folder"
+            android:id="@+id/add_card"
             android:layout_width="30dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+"
             android:gravity="center"
             android:textSize="28sp" />
-
     </LinearLayout>
+
 </LinearLayout>

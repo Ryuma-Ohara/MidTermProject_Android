@@ -23,23 +23,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Action bar title of app
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Another Activity");
+        actionBar.setTitle("Flash Cards");
 
         findViews();
         loadAnimations();
         changeCameraDistance();
-//        ActionBar actionBar = getActionBar();
-//        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
-//    public boolean onOptionsItemSelected(MenuItem item){
-//        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
-//        startActivityForResult(myIntent, 0);
-//        return true;
-//
-//    }
-
+    //========== Animation ==========
     private void changeCameraDistance() {
         int distance = 8000;
         float scale = getResources().getDisplayMetrics().density * distance;

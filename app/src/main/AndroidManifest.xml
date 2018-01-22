@@ -9,14 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" android:parentActivityName=".FoldersActivity"/>
+        <activity
+            android:name=".MainActivity"
+            android:parentActivityName=".FoldersActivity" />
         <activity android:name=".FoldersActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".FolderActivity"
+            android:parentActivityName=".FoldersActivity" />
+        <activity android:name=".CardListActivity"
+                  android:parentActivityName=".FoldersActivity" />
+        <activity android:name=".RegistrationCardActivity"></activity>
     </application>
 
 </manifest>
-
