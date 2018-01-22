@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Folder"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:onClick="flipCard"
+        tools:context=".MainActivity">
+
+        <FrameLayout
+            android:id="@+id/card_back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include layout="@layout/card_back" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/card_front"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <include layout="@layout/card_front" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:rowCount="1"
+        android:columnCount="5"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageButton
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="0"
+            android:src="@drawable/ic_first_page_white_24dp" />
+
+        <ImageButton
+            android:id="@+id/arrow_left"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="1"
+            android:src="@drawable/ic_chevron_left_white_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_column="2"
+            android:paddingTop="10dp"
+            android:text="12/15"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/arrow_right"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="3"
+            android:src="@drawable/ic_chevron_right_white_24dp" />
+
+        <ImageButton
+            android:id="@+id/arrow_end"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="4"
+            android:src="@drawable/ic_last_page_white_24dp" />
+
+    </GridLayout>
+
+</LinearLayout>
