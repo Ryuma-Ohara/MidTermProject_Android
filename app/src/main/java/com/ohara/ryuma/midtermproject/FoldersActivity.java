@@ -14,14 +14,20 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class FoldersActivity extends AppCompatActivity {
 
     private ArrayAdapter<String> adapter;
     private Button btnAddFolder;
+    private List<String> folderList;
+    private ArrayAdapter<String> arrayAdapter;
+    private ListView lv;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,24 +39,21 @@ public class FoldersActivity extends AppCompatActivity {
         actionBar.setTitle("Flash cards");
 
         // List for folders
-        ListView lv = (ListView) findViewById(R.id.listViewFolder);
-        ArrayList<String> arrayCountry = new ArrayList<>();
-        arrayCountry.addAll(Arrays.asList(getResources().getStringArray(R.array.array_folder)));
+        folderList = new ArrayList<String>(Arrays.asList("Verb1", "Verb2", "Noun1", "Preposition", "adverb", "adjective"));
+        arrayAdapter = new ArrayAdapter<String> (this,android.R.layout.simple_list_item_1, folderList);
 
-        adapter = new ArrayAdapter<> (
-                FoldersActivity.this,
-                android.R.layout.simple_list_item_1,
-                arrayCountry);
-        lv.setAdapter(adapter);
-
+        lv = (ListView) findViewById(R.id.list_view_folder);
+        lv.setAdapter(arrayAdapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(FoldersActivity.this, MainActivity.class);
                 startActivity(i);
+
             }
         });
 
+
+        // Plus button
         btnAddFolder = (Button) findViewById(R.id.add_folder);
         btnAddFolder.setOnClickListener(new View.OnClickListener() {
             @Override

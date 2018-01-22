@@ -8,7 +8,7 @@
     tools:context="com.ohara.ryuma.midtermproject.FoldersActivity">
 
     <ListView
-        android:id="@+id/listViewFolder"
+        android:id="@+id/list_view_folder"
         android:layout_width="match_parent"
         android:layout_height="460dp" />
 
