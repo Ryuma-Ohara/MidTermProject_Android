@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //========== Set Flash cards ==========
     public void setFlashCard() {
         TextView flashCardFrontView = (TextView) findViewById(R.id.card_word);
         flashCardFrontView.setText(card.get(0).getFront());

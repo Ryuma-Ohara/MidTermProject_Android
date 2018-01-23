@@ -53,6 +53,7 @@
             android:text="Back:"/>
 
         <EditText
+            android:id="@+id/edit_card_back"
             android:hint="Enter the meaning"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
