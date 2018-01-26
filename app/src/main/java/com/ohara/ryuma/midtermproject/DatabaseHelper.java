@@ -24,7 +24,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String FLASHCARD_COL_4 = "FOLDER_ID";
 
 
-
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
@@ -60,7 +59,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(FLASHCARD_COL_2, front);
         contentValues.put(FLASHCARD_COL_3, back);
         contentValues.put(FLASHCARD_COL_4, id);
-        //db.update(TABLE_FOLDER, contentValues, "ID = ?", new String[] {id});
         long result = db.insert(TABLE_FLASHCARD,null, contentValues);
         if (result == -1) {
             return false;
@@ -68,7 +66,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
         }
     }
-
 
     public Cursor getAllFolderData() {
         SQLiteDatabase db = this.getWritableDatabase();

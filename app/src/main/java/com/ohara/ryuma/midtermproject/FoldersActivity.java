@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class FoldersActivity extends AppCompatActivity {
@@ -111,10 +113,10 @@ public class FoldersActivity extends AppCompatActivity {
 
                         } catch (Exception sqle) {}
 
-                        Intent i = new Intent(FoldersActivity.this, MainActivity.class);
-                        i.putExtra("ID",folderId);
-                        i.putExtra("TITLE",titleName);
-                        startActivity(i);
+                            Intent i = new Intent(FoldersActivity.this, MainActivity.class);
+                            i.putExtra("ID", folderId);
+                            i.putExtra("TITLE", titleName);
+                            startActivity(i);
                     } else {
 
                         // get id from Folder table

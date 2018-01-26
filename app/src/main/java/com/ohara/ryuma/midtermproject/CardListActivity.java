@@ -44,10 +44,16 @@ public class CardListActivity extends AppCompatActivity {
         folderExtraId = i.getStringExtra("FOLDER_ID");
         Log.d( "FOLDER_ID:  " ,"IDid:" + folderExtraId);
 
+        String newFolderId = i.getStringExtra("NEWID");
+        Log.d( "FOLDER_ID:  " ,"folderId:" + newFolderId);
+
+        String className = i.getStringExtra("CLASSNAME");
+        Log.d( "FOLDER_ID:  " ,"className:" + className);
+
+
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(title);
-
-
 
         lv = (ListView) findViewById(R.id.list_view_card);
         items = new ArrayList<>();
@@ -147,14 +153,13 @@ public class CardListActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     // when user return to this page, adapter will be refreshed
     @Override
-    public void onRestart() {
-        super.onRestart();
-           adapter.notifyDataSetChanged();
+    public void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
 
     }
 }

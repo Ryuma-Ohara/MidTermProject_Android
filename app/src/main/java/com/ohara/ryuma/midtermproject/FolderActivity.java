@@ -1,9 +1,11 @@
 package com.ohara.ryuma.midtermproject;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -11,12 +13,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class FolderActivity extends AppCompatActivity {
 
     private Button btnSave;
     private DatabaseHelper myDb;
     private EditText editName;
     private String newFolderId;
+    private ArrayList<String> idItems;
+
 
 //    private EditText editFolder;
 
@@ -73,9 +79,26 @@ public class FolderActivity extends AppCompatActivity {
 //
 //                        }
 
+                        idItems = new ArrayList<>();
+                        try {
+                            Cursor c = myDb.getAllFolderData();
+                            if (c.moveToNext()) {
+                                do {
+                                    idItems.add(c.getString(0));
+                                    Log.d("got a cursor id: ", c.getString(0));
+                                } while (c.moveToNext());
+                            }
+                            newFolderId = idItems.get(idItems.size()-1);
+                            Log.d("Folder: " ,"new folder id:" + newFolderId);
+                            c.close();
+                            myDb.close();
+
+                        } catch (Exception sqle) {}
+
                         // Move to CardList view
                         Intent i = new Intent(FolderActivity.this, CardListActivity.class);
-//                        i.putExtra("NEWID",newFolderId);
+                        i.putExtra("NEWID",newFolderId);
+                        i.putExtra("CLASSNAME", FolderActivity.class.toString());
                         startActivity(i);
 
                     }

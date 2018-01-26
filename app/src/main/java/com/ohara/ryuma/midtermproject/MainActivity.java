@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-
         try {
             Cursor c = db.getAllFlashCardDataWithID(id);  // debug
             card = new ArrayList<>();
@@ -71,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
             myDb.close();
         } catch (Exception sqle) {
         }
-
 
         setFlashCard();
 

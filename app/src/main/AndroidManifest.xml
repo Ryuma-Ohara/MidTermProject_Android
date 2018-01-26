@@ -23,7 +23,8 @@
             android:name=".FolderActivity"
             android:parentActivityName=".FoldersActivity" />
         <activity android:name=".CardListActivity"
-                  android:parentActivityName=".FoldersActivity" />
+                  android:parentActivityName=".FoldersActivity"
+                  android:launchMode="singleTop"/>
         <activity android:name=".RegistrationCardActivity"
             android:parentActivityName=".CardListActivity" />
     </application>
