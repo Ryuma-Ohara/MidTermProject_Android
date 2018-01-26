@@ -24,7 +24,8 @@
             android:parentActivityName=".FoldersActivity" />
         <activity android:name=".CardListActivity"
                   android:parentActivityName=".FoldersActivity" />
-        <activity android:name=".RegistrationCardActivity"></activity>
+        <activity android:name=".RegistrationCardActivity"
+            android:parentActivityName=".CardListActivity" />
     </application>
 
 </manifest>

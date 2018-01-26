@@ -54,13 +54,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean insertFlashCardData(String front, String back) {
+    public boolean insertFlashCardData(String front, String back, String id) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(FLASHCARD_COL_2, front);
         contentValues.put(FLASHCARD_COL_3, back);
-        setFolderId();
-
+        contentValues.put(FLASHCARD_COL_4, id);
+        //db.update(TABLE_FOLDER, contentValues, "ID = ?", new String[] {id});
         long result = db.insert(TABLE_FLASHCARD,null, contentValues);
         if (result == -1) {
             return false;
@@ -82,6 +82,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
 
+    public Cursor getAllFlashCardDataWithID(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from " + TABLE_FLASHCARD + " WHERE FOLDER_ID = " + id + ";", null); //debug
+        return res;
+    }
 
     public boolean updateFolderData(String id, String name) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -112,10 +117,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.delete(TABLE_FLASHCARD, "ID = ?", new String[] {id});
     }
 
-    public void setFolderId() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(FLASHCARD_COL_4, FOLDER_COL_1);
-    }
 
 }

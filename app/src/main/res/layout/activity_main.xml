@@ -12,20 +12,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:paddingTop="10dp"
+        android:paddingTop="20dp"
         android:orientation="horizontal">
-
-        <TextView
-            android:text="Folder"
-            android:textSize="20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="400dp"
+        android:layout_marginBottom="13dp"
         android:onClick="flipCard"
         tools:context=".MainActivity">
 
@@ -58,7 +53,7 @@
         android:paddingRight="15dp">
 
         <ImageButton
-            android:id="@+id/start"
+            android:id="@+id/arrow_first"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_column="0"
@@ -72,6 +67,7 @@
             android:src="@drawable/ic_chevron_left_white_24dp" />
 
         <TextView
+            android:id="@+id/card_num"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -88,7 +84,7 @@
             android:src="@drawable/ic_chevron_right_white_24dp" />
 
         <ImageButton
-            android:id="@+id/arrow_end"
+            android:id="@+id/arrow_final"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_column="4"

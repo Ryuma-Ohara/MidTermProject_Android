@@ -32,7 +32,7 @@
 
         <EditText
             android:id="@+id/edit_card_front"
-            android:hint="Enter the word"
+            android:hint="Enter a word"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp" />
@@ -54,7 +54,7 @@
 
         <EditText
             android:id="@+id/edit_card_back"
-            android:hint="Enter the meaning"
+            android:hint="Enter a meaning"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp" />

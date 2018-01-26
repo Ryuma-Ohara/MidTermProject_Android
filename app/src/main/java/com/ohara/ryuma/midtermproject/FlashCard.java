@@ -21,4 +21,9 @@ public class FlashCard {
     public String getBack() {
         return back;
     }
+
+    @Override
+    public String toString() {
+        return front;
+    }
 }
