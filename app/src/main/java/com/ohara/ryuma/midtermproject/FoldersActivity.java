@@ -40,7 +40,6 @@ public class FoldersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_folders);
-
         // Action bar to the top
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Flash Cards");

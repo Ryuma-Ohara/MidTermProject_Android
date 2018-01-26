@@ -128,7 +128,7 @@ public class CardListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(CardListActivity.this, RegistrationCardActivity.class);
-                //i.putExtra("FOLDER_ID", folderID);
+                i.putExtra("FOLDER_ID2", folderExtraId);
                 startActivity(i);
             }
         });

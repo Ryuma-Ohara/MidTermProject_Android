@@ -25,8 +25,6 @@ public class RegistrationCardActivity extends AppCompatActivity {
     private ArrayList<String> items;
     private String folderExtraId;
     private ArrayList<FlashCard> flashCardSet;
-//    private int id2;
-//    private Integer id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +52,6 @@ public class RegistrationCardActivity extends AppCompatActivity {
         Log.d( "FOLDER_ID:  " ,"BackBack:" + backVal);
 
         folderExtraId = i.getStringExtra("FOLDER_ID2");
-        Log.d( "FOLDER_ID:  " ,"IDidID:" + folderExtraId);
 
         editCardFront.setText(frontVal);
         editCardBack.setText(backVal);
@@ -65,6 +62,7 @@ public class RegistrationCardActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         String frontEdit = editCardFront.getText().toString();
                         String backEdit = editCardBack.getText().toString();
+                        Log.d( "FOLDER_ID:  " ,"IDidID:" + folderExtraId);
 
                         if (frontEdit.matches("") && backEdit.matches("")) {
                             Toast.makeText(RegistrationCardActivity.this, "Please enter a word and a meaning", Toast.LENGTH_SHORT).show();
