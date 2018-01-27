@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         DatabaseHelper db = new DatabaseHelper(this);
 
         try {
-            Cursor c = db.getAllFlashCardDataWithID(id);  // debug
+            Cursor c = db.getAllFlashCardDataWithID(id);
             card = new ArrayList<>();
             if (c.moveToNext()) {
                 do {

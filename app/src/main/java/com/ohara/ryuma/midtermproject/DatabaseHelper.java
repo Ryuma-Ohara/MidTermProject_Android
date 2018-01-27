@@ -81,7 +81,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getAllFlashCardDataWithID(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from " + TABLE_FLASHCARD + " WHERE FOLDER_ID = " + id + ";", null); //debug
+        Cursor res = db.rawQuery("select * from " + TABLE_FLASHCARD + " WHERE FOLDER_ID = " + id + ";", null);
         return res;
     }
 

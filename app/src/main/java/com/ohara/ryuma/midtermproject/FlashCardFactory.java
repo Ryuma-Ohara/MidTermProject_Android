@@ -23,21 +23,14 @@ public class FlashCardFactory {
         setCardList(id);
     }
 
-//    public ArrayList<FlashCard> getFlashCardSet() {
-//        return flashCardSet;
-//    }
 
     public ArrayList<FlashCard> setCardList(String id){
         try {
             Cursor c = myDb.getAllFlashCardDataWithID(id);
             flashCardSet = new ArrayList<>();
-            //folderIds = new ArrayList<>();
             if (c.moveToNext()) {
                 do {
                     Log.d(TAG, "setCardList: " + c.getString(1));
-//                    //folderIds.add(c.getString(3));
-//                    flashCardSet.add(new FlashCard(c.getString(1),c.getString(2)));
-//                    Log.d("got a cursor2: ", c.getString(0));
                 } while (c.moveToNext());
             }
             c.close();
